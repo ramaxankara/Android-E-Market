@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">E_Market</string>
+    <color name="buton_tasarim">#B30000</color>
+    <color name="buton_tasarim_press">#FF8080</color>
+    <color name="sehirSecArkaPlan">#FF8080</color>
+
+</resources>
