@@ -19,38 +19,32 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Arama_Activity extends AppCompatActivity {
     TextView listele;
-    String arananUrun="";
+    String arananUrun="",urununBulunduguSubeler="",sehirAdi;
     Boolean urunVarmı=false;
     EditText girilenUrun;
-    String sehirAdi;
-    String urunBarkoNo="d";
+    Button isimileArama,barkodNoileArama;
 
-
-
-
-
-//DatabaseEklemeIslemleri ekle=new DatabaseEklemeIslemleri();
 
     MainActivity mainNesne = new MainActivity();
-    String temp = "asd";
-    String urununBulunduguSubeler="";
     DatabaseReference oku= FirebaseDatabase.getInstance().getReference();
+
 
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arama);
+
          listele=findViewById(R.id.listele);
-        sehirAdi = mainNesne.getIsim().substring(0,mainNesne.getIsim().length()-3);
+         sehirAdi = mainNesne.getIsim().substring(0,mainNesne.getIsim().length()-3);
+         girilenUrun = (EditText)findViewById(R.id.hangiButonTxt);
 
 
-            Button isimileArama = (Button) findViewById(R.id.isimlearamabtn);
-            Button barkodNoileArama=findViewById(R.id.barkodnoilearamabtn);
+             isimileArama = (Button) findViewById(R.id.isimlearamabtn);
+             barkodNoileArama=findViewById(R.id.barkodnoilearamabtn);
 
             //Ürünün ismine göre şube arama
         isimileArama.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    girilenUrun = (EditText)findViewById(R.id.hangiButonTxt);
                     arananUrun=girilenUrun.getText().toString();
 
                     ValueEventListener dinle=new ValueEventListener()
@@ -112,7 +106,6 @@ public class Arama_Activity extends AppCompatActivity {
             barkodNoileArama.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    girilenUrun = (EditText)findViewById(R.id.hangiButonTxt);
                     arananUrun=girilenUrun.getText().toString();
 
                     ValueEventListener dinle=new ValueEventListener()
@@ -171,7 +164,7 @@ public class Arama_Activity extends AppCompatActivity {
             });
 
 
-
+        //Barcode okuma Sayfası Açıldı(Ramazan)
             Button ramazanButton = (Button) findViewById(R.id.ramazanBtn);
             ramazanButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -179,9 +172,10 @@ public class Arama_Activity extends AppCompatActivity {
 
 
 
-                    Intent intent=new Intent(Arama_Activity.this,barcodeShow.class);
+                  //  DatabaseEklemeIslemleri ekle=new DatabaseEklemeIslemleri();
+                    //ekle.Veriekle();
+                   Intent intent=new Intent(Arama_Activity.this,barcodeShow.class);
                     startActivity(intent);
-
 
 
 
@@ -189,52 +183,10 @@ public class Arama_Activity extends AppCompatActivity {
             });
 
 
-            //Barcode okuma Sayfası Açıldı(Ramazan)
+
         }
 
-/*
-// veritabanına veri ekle kodu
-public void Veriekle()
-{
 
-
-
-    DatabaseEklemeIslemleri ekle=new DatabaseEklemeIslemleri();
-
-//sehir ekleme
-for(int i=0;i<sehirButonIsimleri.length;i++){
-
-  String  sehir=sehirButonIsimleri[i].substring(0,sehirButonIsimleri[i].length()-3);
-    ekle.SehirEkle(sehir,sehir);
-}
-
-//sube ekleme
-             for(int i=0;i<sehirButonIsimleri.length;i++){
-                        for(int j=1;j<5;j++){
-                            String  sehir=sehirButonIsimleri[i].substring(0,sehirButonIsimleri[i].length()-3);
-                            ekle.SubeEkle(sehir,""+j,"A10"+j,"çaydaçıra mh no="+j+"-","4592","7845");
-                        }
-
-                    }
-
-                  //  urun ekleme
-                    for(int i=0;i<sehirButonIsimleri.length;i++){
-                        for(int j=1;j<5;j++){
-                            for(int t=1;t<4;t++){
-                                String  sehir=sehirButonIsimleri[i].substring(0,sehirButonIsimleri[i].length()-3);
-                                ekle.UrunEkle(sehir,""+j,""+t,"centro"+t+"-",""+(10-j-t),"457"+i+""+j+""+t,""+j);
-
-                            }
-                        }
-
-                    }
-
-
-                    //urunler taablosuna urun ekleme
-                    for(int i=0;i<5;i++){
-                        ekle.UrunTablosunaUrunEkleme("centro"+i+"-","145248","45","5");
-                    }
-} */
 
 
 

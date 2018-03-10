@@ -44,4 +44,62 @@ public class DatabaseEklemeIslemleri {
         veritabani.child(urunAdi).setValue(urunSinifi);
 
     }
+
+
+
+    public void Veriekle()
+    {
+
+        String sehirButonIsimleri []= {"adanaBtn","adiyamanBtn","afyonBtn","agriBtn","amasyaBtn","ankaraBtn","antalyaBtn","artvinBtn","aydinBtn","balikesirBtn"
+                ,"bilecikBtn","bingolBtn","bitlisBtn",
+                "boluBtn","burdurBtn","bursaBtn","canakkaleBtn","cankiriBtn","corumBtn","denizliBtn","diyarbakirBtn","edirneBtn","elazigBtn", "erzincanBtn","erzurumBtn",
+                "eskisehirBtn","gaziantepBtn","giresunBtn","gumushaneBtn","hakkariBtn","hatayBtn","ispartaBtn","mersinBtn","istanbulBtn","izmirBtn"
+                ,"karsBtn","kastamonuBtn",
+                "kayseriBtn","kirklareliBtn","kirsehirBtn","kocaeliBtn","konyaBtn","kutahyaBtn","malatyaBtn","manisaBtn","marasBtn","mardinBtn",
+                "muglaBtn","musBtn","nevsehirBtn",
+                "nigdeBtn","orduBtn","rizeBtn","sakaryaBtn","samsunBtn","siirtBtn","sinopBtn","sivasBtn","tekirdagBtn","tokatBtn","trabzonBtn",
+                "tunceliBtn","urfaBtn","usakBtn",
+                "vanBtn","yozgatBtn","zonguldakBtn","aksarayBtn","bayburtBtn","karamanBtn","kirikkaleBtn","batmanBtn","sirnakBtn","bartinBtn",
+                "ardahanBtn","igdirBtn",
+                "yalovaBtn","karabukBtn","kilisBtn","osmaniyeBtn","duzceBtn"};
+
+
+
+
+        DatabaseEklemeIslemleri ekle=new DatabaseEklemeIslemleri();
+
+//sehir ekleme
+        for(int i=0;i<sehirButonIsimleri.length;i++){
+
+            String  sehir=sehirButonIsimleri[i].substring(0,sehirButonIsimleri[i].length()-3);
+            SehirEkle(sehir,sehir);
+        }
+
+//sube ekleme
+        for(int i=0;i<sehirButonIsimleri.length;i++){
+            for(int j=1;j<5;j++){
+                String  sehir=sehirButonIsimleri[i].substring(0,sehirButonIsimleri[i].length()-3);
+                SubeEkle(sehir,""+j,"A10"+j,"çaydaçıra mh no="+j+"-","4592","7845");
+            }
+
+        }
+
+        //  urun ekleme
+        for(int i=0;i<sehirButonIsimleri.length;i++){
+            for(int j=1;j<5;j++){
+                for(int t=1;t<4;t++){
+                    String  sehir=sehirButonIsimleri[i].substring(0,sehirButonIsimleri[i].length()-3);
+                    UrunEkle(sehir,""+j,""+t,"centro"+t+"-",""+(10-j-t),"457"+i+""+j+""+t,""+j);
+
+                }
+            }
+
+        }
+
+
+        //urunler taablosuna urun ekleme
+        for(int i=0;i<5;i++){
+          UrunTablosunaUrunEkleme("centro"+i+"-","145248","45","5");
+        }
+    }
 }
