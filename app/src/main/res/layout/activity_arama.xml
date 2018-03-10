@@ -32,10 +32,23 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/geriBtn"
+                android:id="@+id/isimlearamabtn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Geri"
+                android:text="isim ile ara"
+                tools:layout_editor_absoluteX="124dp"
+                tools:layout_editor_absoluteY="204dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/barkodnoilearamabtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="barkod ile ara"
                 tools:layout_editor_absoluteX="124dp"
                 tools:layout_editor_absoluteY="204dp" />
         </TableRow>

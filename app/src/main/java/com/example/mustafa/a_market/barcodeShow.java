@@ -26,6 +26,7 @@ import static android.Manifest.permission.CAMERA;
  */
 
 public class barcodeShow  extends AppCompatActivity implements ZXingScannerView.ResultHandler{
+
     private static final int REQUEST_CAMERA =1;
     private ZXingScannerView scannerView;
 
@@ -136,7 +137,7 @@ public class barcodeShow  extends AppCompatActivity implements ZXingScannerView.
 
     @Override
     public void handleResult(final Result result) {
-        final String scanResult=result.getText();//Barkodu Strin değişkene Atıldı
+          String scanResult=result.getText();//Barkodu Strin değişkene Atıldı
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
         builder.setTitle("Scan Result"); //Barkod değişkeni Ekrana Yazıldı
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -146,20 +147,15 @@ public class barcodeShow  extends AppCompatActivity implements ZXingScannerView.
             }
         });
 
-        //Barkod Okunduktan sonraki ok butonu
-        builder.setNeutralButton("Visit ", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse(scanResult));
-                startActivity(intent);
-            }
-        });
+
         //Barkod Okunduktan sonraki Visit butonu
         builder.setMessage(scanResult ); //Barkod  Değişken yazıldı
         AlertDialog alert=builder.create();
         alert.show();//Alert Mesajı
 
     }
+
+
 }
 
 

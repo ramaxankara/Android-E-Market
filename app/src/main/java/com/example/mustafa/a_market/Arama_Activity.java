@@ -23,6 +23,9 @@ public class Arama_Activity extends AppCompatActivity {
     Boolean urunVarmı=false;
     EditText girilenUrun;
     String sehirAdi;
+    String urunBarkoNo="d";
+
+
 
 
 
@@ -40,13 +43,11 @@ public class Arama_Activity extends AppCompatActivity {
         sehirAdi = mainNesne.getIsim().substring(0,mainNesne.getIsim().length()-3);
 
 
-
-
-
-            Button geriBtn = (Button) findViewById(R.id.geriBtn);
+            Button isimileArama = (Button) findViewById(R.id.isimlearamabtn);
+            Button barkodNoileArama=findViewById(R.id.barkodnoilearamabtn);
 
             //Ürünün ismine göre şube arama
-            geriBtn.setOnClickListener(new View.OnClickListener() {
+        isimileArama.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     girilenUrun = (EditText)findViewById(R.id.hangiButonTxt);
@@ -75,8 +76,7 @@ public class Arama_Activity extends AppCompatActivity {
                                             urunVarmı=true;
                                             SubeOzelikleri sube=new SubeOzelikleri();
                                             sube=dataSnapshot.child("iller").child(sehirAdi).child(""+i).getValue(SubeOzelikleri.class);
-                                              urununBulunduguSubeler+=sube.subeAdi+"\n";
-                                            //urununBulunduguSubeler+=dataSnapshot.child("iller").child(sehirAdi).child(""+i).getKey();
+                                              urununBulunduguSubeler+=sube.subeAdi+" Şubesinde "+urun.urunMiktari+" tane "+urun.urunAdi+" bulunmaktadır"+"\n";
                                         }
 
                                     }
@@ -87,9 +87,12 @@ public class Arama_Activity extends AppCompatActivity {
                             if(urunVarmı){
                                 listele.setText(urununBulunduguSubeler);
                                 urunVarmı=false;
+                                urununBulunduguSubeler="";
+
                             }
                             else {
                                 listele.setText("ürün bulunamadı");
+                                urununBulunduguSubeler="";
                             }
 
 
@@ -105,12 +108,82 @@ public class Arama_Activity extends AppCompatActivity {
                 }
             });
 
+
+            barkodNoileArama.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    girilenUrun = (EditText)findViewById(R.id.hangiButonTxt);
+                    arananUrun=girilenUrun.getText().toString();
+
+                    ValueEventListener dinle=new ValueEventListener()
+                    {
+
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot)
+                        {
+
+
+                            for (DataSnapshot postSnapshot: dataSnapshot.getChildren())
+                            {
+
+                                int subeSayisi= (int) dataSnapshot.child("iller").child(sehirAdi).getChildrenCount();
+                                for(int i=1;i<subeSayisi;i++)
+                                {
+                                    int urunSayisi=(int)dataSnapshot.child("iller").child(sehirAdi).child(""+i).getChildrenCount();
+                                    for (int k=1;k<urunSayisi-3;k++)
+                                    {
+                                        UrunOzelikleri urun=new UrunOzelikleri();
+                                        urun=dataSnapshot.child("iller").child(sehirAdi).child(""+i).child(""+k).getValue(UrunOzelikleri.class);
+                                        if(urun.urunBarkodNo.equals(arananUrun)){
+                                            urunVarmı=true;
+                                            SubeOzelikleri sube=new SubeOzelikleri();
+                                            sube=dataSnapshot.child("iller").child(sehirAdi).child(""+i).getValue(SubeOzelikleri.class);
+                                            urununBulunduguSubeler+=sube.subeAdi+" Şubesinde "+urun.urunMiktari+" tane "+urun.urunAdi+" bulunmaktadır"+"\n";
+                                        }
+
+                                    }
+
+                                }
+                                break;
+                            }
+                            if(urunVarmı){
+                                listele.setText(urununBulunduguSubeler);
+                                urunVarmı=false;
+                                urununBulunduguSubeler="";
+
+                            }
+                            else {
+                                listele.setText("ürün bulunamadı");
+                                urununBulunduguSubeler="";
+                            }
+
+
+                        }
+
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+
+                        }
+                    };
+                    oku.addValueEventListener(dinle);
+                }
+            });
+
+
+
             Button ramazanButton = (Button) findViewById(R.id.ramazanBtn);
             ramazanButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                  // Intent intent=new Intent(Arama_Activity.this,barcodeShow.class);
-                   //startActivity(intent);
+
+
+
+                    Intent intent=new Intent(Arama_Activity.this,barcodeShow.class);
+                    startActivity(intent);
+
+
+
 
                 }
             });
@@ -165,4 +238,8 @@ for(int i=0;i<sehirButonIsimleri.length;i++){
 
 
 
+
+
+
 }
+
