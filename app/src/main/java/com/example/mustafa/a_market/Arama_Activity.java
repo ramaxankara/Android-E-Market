@@ -103,65 +103,7 @@ public class Arama_Activity extends AppCompatActivity {
             });
 
 
-            barkodNoileArama.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    arananUrun=girilenUrun.getText().toString();
 
-                    ValueEventListener dinle=new ValueEventListener()
-                    {
-
-                        @Override
-                        public void onDataChange(DataSnapshot dataSnapshot)
-                        {
-
-
-                            for (DataSnapshot postSnapshot: dataSnapshot.getChildren())
-                            {
-
-                                int subeSayisi= (int) dataSnapshot.child("iller").child(sehirAdi).getChildrenCount();
-                                for(int i=1;i<subeSayisi;i++)
-                                {
-                                    int urunSayisi=(int)dataSnapshot.child("iller").child(sehirAdi).child(""+i).getChildrenCount();
-                                    for (int k=1;k<urunSayisi-3;k++)
-                                    {
-                                        UrunOzelikleri urun=new UrunOzelikleri();
-                                        urun=dataSnapshot.child("iller").child(sehirAdi).child(""+i).child(""+k).getValue(UrunOzelikleri.class);
-                                        if(urun.urunBarkodNo.equals(arananUrun)){
-                                            urunVarmı=true;
-                                            SubeOzelikleri sube=new SubeOzelikleri();
-                                            sube=dataSnapshot.child("iller").child(sehirAdi).child(""+i).getValue(SubeOzelikleri.class);
-                                            urununBulunduguSubeler+=sube.subeAdi+" Şubesinde "+urun.urunMiktari+" tane "+urun.urunAdi+" bulunmaktadır"+"\n";
-                                        }
-
-                                    }
-
-                                }
-                                break;
-                            }
-                            if(urunVarmı){
-                                listele.setText(urununBulunduguSubeler);
-                                urunVarmı=false;
-                                urununBulunduguSubeler="";
-
-                            }
-                            else {
-                                listele.setText("ürün bulunamadı");
-                                urununBulunduguSubeler="";
-                            }
-
-
-                        }
-
-
-                        @Override
-                        public void onCancelled(DatabaseError databaseError) {
-
-                        }
-                    };
-                    oku.addValueEventListener(dinle);
-                }
-            });
 
 
         //Barcode okuma Sayfası Açıldı(Ramazan)
@@ -169,7 +111,6 @@ public class Arama_Activity extends AppCompatActivity {
             ramazanButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
 
 
                   //  DatabaseEklemeIslemleri ekle=new DatabaseEklemeIslemleri();
@@ -182,7 +123,66 @@ public class Arama_Activity extends AppCompatActivity {
                 }
             });
 
+// barkod ile arama
+        barkodNoileArama.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                arananUrun=girilenUrun.getText().toString();
 
+                ValueEventListener dinle=new ValueEventListener()
+                {
+
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot)
+                    {
+
+
+                        for (DataSnapshot postSnapshot: dataSnapshot.getChildren())
+                        {
+
+                            int subeSayisi= (int) dataSnapshot.child("iller").child(sehirAdi).getChildrenCount();
+                            for(int i=1;i<subeSayisi;i++)
+                            {
+                                int urunSayisi=(int)dataSnapshot.child("iller").child(sehirAdi).child(""+i).getChildrenCount();
+                                for (int k=1;k<urunSayisi-3;k++)
+                                {
+                                    UrunOzelikleri urun=new UrunOzelikleri();
+                                    urun=dataSnapshot.child("iller").child(sehirAdi).child(""+i).child(""+k).getValue(UrunOzelikleri.class);
+                                    if(urun.urunBarkodNo.equals(arananUrun)){
+                                        urunVarmı=true;
+                                        SubeOzelikleri sube=new SubeOzelikleri();
+                                        sube=dataSnapshot.child("iller").child(sehirAdi).child(""+i).getValue(SubeOzelikleri.class);
+                                        urununBulunduguSubeler+=sube.subeAdi+" Şubesinde "+urun.urunMiktari+" tane "+urun.urunAdi+" bulunmaktadır"+"\n";
+                                    }
+
+                                }
+
+                            }
+                            break;
+                        }
+                        if(urunVarmı){
+                            listele.setText(urununBulunduguSubeler);
+                            urunVarmı=false;
+                            urununBulunduguSubeler="";
+
+                        }
+                        else {
+                            listele.setText("ürün bulunamadı");
+                            urununBulunduguSubeler="";
+                        }
+
+
+                    }
+
+
+                    @Override
+                    public void onCancelled(DatabaseError databaseError) {
+
+                    }
+                };
+                oku.addValueEventListener(dinle);
+            }
+        });
 
         }
 
