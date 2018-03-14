@@ -36,12 +36,12 @@ public class DatabaseEklemeIslemleri {
         veritabani.child(urun_Id).setValue(urunSinifi);
     }
 
-    public void UrunTablosunaUrunEkleme(String urunAdi,String urunBarkodNo,String urunMiktari,String urunFiyati)
+    public void UrunTablosunaUrunEkleme(String urun_Id,String urunAdi,String urunBarkodNo,String urunMiktari,String urunFiyati)
     {
         veritabani= FirebaseDatabase.getInstance().getReference().child("urunler");
         UrunOzelikleri urunSinifi=new UrunOzelikleri(urunAdi,urunMiktari,urunFiyati,urunBarkodNo);
 
-        veritabani.child(urunAdi).setValue(urunSinifi);
+        veritabani.child(urun_Id).setValue(urunSinifi);
 
     }
 
@@ -99,7 +99,7 @@ public class DatabaseEklemeIslemleri {
 
         //urunler taablosuna urun ekleme
         for(int i=0;i<5;i++){
-          UrunTablosunaUrunEkleme("centro"+i+"-","145248","45","5");
+          UrunTablosunaUrunEkleme(""+i,"centro"+i+"-","145248","45","5");
         }
     }
 }

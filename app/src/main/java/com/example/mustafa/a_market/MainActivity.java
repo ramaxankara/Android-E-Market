@@ -6,10 +6,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
+public class MainActivity extends AppCompatActivity {
+    DatabaseReference oku= FirebaseDatabase.getInstance().getReference();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -77,12 +84,12 @@ public class MainActivity extends AppCompatActivity {
 
                     setIsim(finalTest);
 
+
                     Intent aramaSayfasıAc = new Intent(MainActivity.this, Arama_Activity.class);
                     startActivity(aramaSayfasıAc);
 
-                   // ibrahimBtn.setText(finalTest.substring(0,finalTest.length()-3));
 
-                    // hangi butona tıklanmıssa onun ID'sini alıp sonundaki ..Btn ekini silmek için substring kullanıldı
+
                 }
 
             });
@@ -91,11 +98,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+
+
     static String gonder = null;
+
     public void setIsim(String gidecekIsim){
         gonder = gidecekIsim;
     }
-    public String getIsim(){
+    public String getIsim()
+    {
         return gonder;
     }
 

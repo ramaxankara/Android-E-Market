@@ -2,15 +2,14 @@ package com.example.mustafa.a_market;
 
 
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.zxing.Result;
@@ -29,7 +28,7 @@ public class barcodeShow  extends AppCompatActivity implements ZXingScannerView.
 
     private static final int REQUEST_CAMERA =1;
     private ZXingScannerView scannerView;
-
+TextView listele;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +36,8 @@ public class barcodeShow  extends AppCompatActivity implements ZXingScannerView.
 
         scannerView=new ZXingScannerView(this);
         setContentView(scannerView);
+     listele=findViewById(R.id.listele);
+
 
         if(Build.VERSION.SDK_INT >=Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1);//Kamera izni İçin en Düşük API
         {
@@ -152,7 +153,7 @@ public class barcodeShow  extends AppCompatActivity implements ZXingScannerView.
         builder.setMessage(scanResult ); //Barkod  Değişken yazıldı
         AlertDialog alert=builder.create();
         alert.show();//Alert Mesajı
-
+            listele.setText("denem");
     }
 
 

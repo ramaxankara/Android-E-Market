@@ -2,7 +2,9 @@ package com.example.mustafa.a_market;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.*;
 
@@ -11,6 +13,8 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
 
 
 /**
@@ -21,32 +25,70 @@ public class Arama_Activity extends AppCompatActivity {
     TextView listele;
     String arananUrun="",urununBulunduguSubeler="",sehirAdi;
     Boolean urunVarmı=false;
-    EditText girilenUrun;
     Button isimileArama,barkodNoileArama;
-
-
     MainActivity mainNesne = new MainActivity();
+    ArrayList<String> urunler = new ArrayList<String>();
+
+    public Arama_Activity()
+     {
+
+         ValueEventListener dinle=new ValueEventListener()
+         {
+
+             @Override
+             public void onDataChange(DataSnapshot dataSnapshot)
+             {
+                 int urunsayisi= (int) dataSnapshot.child("urunler").getChildrenCount();
+                 for(int i=0;i<urunsayisi;i++)
+                 {
+                     UrunOzelikleri urun=new UrunOzelikleri();
+                     urun=dataSnapshot.child("urunler").child(""+i).getValue(UrunOzelikleri.class);
+                     urunler.add(urun.urunAdi);
+
+                 }
+
+             }
+
+
+             @Override
+             public void onCancelled(DatabaseError databaseError) {
+
+             }
+         };
+         oku.addValueEventListener(dinle);
+
+     }
+
     DatabaseReference oku= FirebaseDatabase.getInstance().getReference();
+
+
 
 
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arama);
 
+
          listele=findViewById(R.id.listele);
          sehirAdi = mainNesne.getIsim().substring(0,mainNesne.getIsim().length()-3);
-         girilenUrun = (EditText)findViewById(R.id.hangiButonTxt);
-
-
              isimileArama = (Button) findViewById(R.id.isimlearamabtn);
              barkodNoileArama=findViewById(R.id.barkodnoilearamabtn);
+
+
+
+        final AutoCompleteTextView sirala =findViewById(R.id.txt);
+        final ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
+        android.R.layout.simple_spinner_dropdown_item, urunler);
+        sirala.setAdapter(adapter);
+
+
 
             //Ürünün ismine göre şube arama
         isimileArama.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    arananUrun=girilenUrun.getText().toString();
-
+                    arananUrun=sirala.getText().toString();
+                    //girilenUrun.getText().toString();
                     ValueEventListener dinle=new ValueEventListener()
                     {
 
@@ -104,9 +146,7 @@ public class Arama_Activity extends AppCompatActivity {
 
 
 
-
-
-        //Barcode okuma Sayfası Açıldı(Ramazan)
+            //Barcode okuma Sayfası Açıldı(Ramazan)
             Button ramazanButton = (Button) findViewById(R.id.ramazanBtn);
             ramazanButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -114,9 +154,9 @@ public class Arama_Activity extends AppCompatActivity {
 
 
                   //  DatabaseEklemeIslemleri ekle=new DatabaseEklemeIslemleri();
-                    //ekle.Veriekle();
+                    //  ekle.Veriekle();
                    Intent intent=new Intent(Arama_Activity.this,barcodeShow.class);
-                    startActivity(intent);
+                   startActivity(intent);
 
 
 
@@ -127,7 +167,7 @@ public class Arama_Activity extends AppCompatActivity {
         barkodNoileArama.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                arananUrun=girilenUrun.getText().toString();
+                arananUrun=sirala.getText().toString();
 
                 ValueEventListener dinle=new ValueEventListener()
                 {
@@ -185,11 +225,6 @@ public class Arama_Activity extends AppCompatActivity {
         });
 
         }
-
-
-
-
-
 
 
 

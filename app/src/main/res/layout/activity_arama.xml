@@ -16,15 +16,17 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <EditText
-                android:id="@+id/hangiButonTxt"
+            <AutoCompleteTextView
+                android:id="@+id/txt"
+                android:layout_centerInParent="true"
+                android:textSize="20sp"
+                android:textColor="#010101"
+                android:popupBackground="#FF1FE910"
+                android:hint="Aramak istediğiniz ürünü yazınız"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textPersonName"
-                android:hint="ürün seçin"
-                tools:layout_editor_absoluteX="60dp"
-                tools:layout_editor_absoluteY="87dp" />
+                android:layout_height="wrap_content" />
+
+
         </TableRow>
 
         <TableRow
