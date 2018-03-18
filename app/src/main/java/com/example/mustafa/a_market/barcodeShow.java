@@ -2,7 +2,9 @@ package com.example.mustafa.a_market;
 
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -138,22 +140,42 @@ TextView listele;
 
     @Override
     public void handleResult(final Result result) {
-          String scanResult=result.getText();//Barkodu Strin değişkene Atıldı
+        final String scanResult=result.getText();
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
-        builder.setTitle("Scan Result"); //Barkod değişkeni Ekrana Yazıldı
+        builder.setTitle("Scan Result");
         builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                scannerView.resumeCameraPreview(barcodeShow.this);
+                //scannerView.resumeCameraPreview(barcodeShow.this);
+                setBarkod(scanResult);
+
+                Intent aramaSayfasiAc = new Intent(barcodeShow.this,Arama_Activity.class);
+                startActivity(aramaSayfasiAc);
             }
         });
-
-
-        //Barkod Okunduktan sonraki Visit butonu
-        builder.setMessage(scanResult ); //Barkod  Değişken yazıldı
+        builder.setNeutralButton("Visit ", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse(scanResult));
+                startActivity(intent);
+            }
+        });
+        builder.setMessage(scanResult );
         AlertDialog alert=builder.create();
-        alert.show();//Alert Mesajı
-            listele.setText("denem");
+        alert.show();
+
+    }
+
+
+
+    static String okunanBarkod = null;
+
+    public void setBarkod(String gidecekBarkod){
+        okunanBarkod = gidecekBarkod;
+    }
+    public String getBarkod()
+    {
+        return okunanBarkod;
     }
 
 

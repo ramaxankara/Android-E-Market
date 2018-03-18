@@ -14,6 +14,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 
 
@@ -29,8 +31,13 @@ public class Arama_Activity extends AppCompatActivity {
     MainActivity mainNesne = new MainActivity();
     ArrayList<String> urunler = new ArrayList<String>();
 
+
+
+
+
     public Arama_Activity()
      {
+
 
          ValueEventListener dinle=new ValueEventListener()
          {
@@ -62,14 +69,19 @@ public class Arama_Activity extends AppCompatActivity {
     DatabaseReference oku= FirebaseDatabase.getInstance().getReference();
 
 
-
+    barcodeShow barcodeNesne = new barcodeShow();
 
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arama);
 
+        listele=findViewById(R.id.listele);
+        String gelenBarkod = null;
+        gelenBarkod = barcodeNesne.getBarkod();
+        listele.setText(gelenBarkod);
 
-         listele=findViewById(R.id.listele);
+
+
          sehirAdi = mainNesne.getIsim().substring(0,mainNesne.getIsim().length()-3);
              isimileArama = (Button) findViewById(R.id.isimlearamabtn);
              barkodNoileArama=findViewById(R.id.barkodnoilearamabtn);
