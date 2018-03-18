@@ -4,1216 +4,1152 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.mustafa.a_market.MainActivity">
+    tools:context="com.example.mustafa.e_market.MainActivity">
 
 
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:fillViewport="true"> <!--IMPORTANT otherwise backgrnd img. will not fill the whole screen -->
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <TableLayout
+        <!--IMPORTANT otherwise backgrnd img. will not fill the whole screen -->
+
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
             android:background="@color/sehirSecArkaPlan"
-            android:paddingLeft="5dp" >
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/adanaBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Adana\n01"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/adiyamanBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Adıyaman\n02"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/afyonBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Afyon\n03"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/agriBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Ağrı\n04"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/amasyaBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Amasya\n05"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/ankaraBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Ankara\n06"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-            </TableRow>
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/antalyaBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Antalya\n07"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/artvinBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Artvin\n08"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/aydinBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Aydın\n09"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/balikesirBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Balıkesir\n10"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/bilecikBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Bilecik\n11"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/bingolBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Bingol\n12"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/bitlisBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Bitlis\n13"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/boluBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Bolu\n14"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/burdurBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Burdur\n15"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-            </TableRow>
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/bursaBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Bursa\n16"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/canakkaleBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Çanakkale\n17"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/cankiriBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Çankırı\n18"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/corumBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Çorum\n19"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/denizliBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Denizli\n20"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/diyarbakirBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Diyarbakır\n21"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/edirneBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Edirne\n22"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/elazigBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Elazığ\n23"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/erzincanBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Erzincan\n24"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/erzurumBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Erzurum\n25"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/eskisehirBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Eskişehir\n26"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/gaziantepBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Gaziantep\n27"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/giresunBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Giresun\n28"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/gumushaneBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Gümüşhane\n29"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/hakkariBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Hakkari\n30"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/hatayBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Hatay\n31"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/ispartaBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Hatay\n32"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/mersinBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Mersin\n33"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/istanbulBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="istanbul\n34"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/izmirBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="İzmir\n35"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/karsBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Kars\n36"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/kastamonuBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Kastamonu\n37"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/kayseriBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Kayseri\n38"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/kirklareliBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Kırklareli\n39"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/kirsehirBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Kırşehir\n40"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/kocaeliBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Kocaeli\n41"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/konyaBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Konya\n42"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/kutahyaBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Kütahya\n43"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/malatyaBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Malatya\n44"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/manisaBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Manisa\n45"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/marasBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="K.Maraş\n46"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/mardinBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Mardin\n47"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/muglaBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Muğla\n48"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/musBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Muş\n49"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/nevsehirBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Nevşehir\n50"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/nigdeBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Niğde\n51"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/orduBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Ordu\n52"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/rizeBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Rize\n53"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/sakaryaBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Sakarya\n54"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/samsunBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Samsun\n55"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/siirtBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Siirt\n56"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/sinopBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Sinop\n57"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/sivasBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Sivas\n58"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/tekirdagBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Tekirdağ\n59"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/tokatBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Tokat\n60"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/trabzonBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Trabzon\n61"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/tunceliBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Tunceli\n62"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/urfaBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Ş.urfa\n63"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/usakBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Uşak\n64"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/vanBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Van\n65"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/yozgatBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Yozgat\n66"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/zonguldakBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Zonguldak\n67"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/aksarayBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Aksaray\n68"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/bayburtBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Bayburt\n69"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/karamanBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Karaman\n70"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/kirikkaleBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Kırıkkale\n71"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/batmanBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Batman\n72"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/sirnakBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="şırnak\n73"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/bartinBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Bartın\n74"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/ardahanBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Ardahan\n75"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/igdirBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Iğdır\n76"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/yalovaBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Yalova\n77"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/karabukBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Karabük\n78"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/kilisBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Kilis\n79"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/osmaniyeBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Osmaniye\n80"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-                <Button
-                    android:id="@+id/duzceBtn"
-                    android:layout_width="350px"
-                    android:layout_height="220px"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/buton_selector"
-                    android:fontFamily="serif"
-                    android:text="Düzce\n81"
-                    android:textColor="#FFFFFF"
-                    android:textSize="13sp"
-                    android:textStyle="bold" />
-
-
-            </TableRow>
-
-
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <Button
-                    android:id="@+id/ibrahimBtn"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentBottom="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginBottom="14dp"
-                    android:text="İbram"
-                    tools:layout_editor_absoluteX="50dp"
-                    tools:layout_editor_absoluteY="97dp" />
-            </TableRow>
-        </TableLayout>
-
+            android:orientation="horizontal">
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/sehirSecArkaPlan"
+                android:gravity="center_horizontal">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/adanaBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Adana\n01"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/adiyamanBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Adıyaman\n02"
+                        android:textColor="#FFFFFF"
+                        android:textStyle="bold" />
+
+
+                    <Button
+                        android:id="@+id/afyonBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Afyon\n03"
+                        android:textColor="#FFFFFF"
+
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/agriBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Ağrı\n04"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/amasyaBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Amasya\n05"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/ankaraBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Ankara\n06"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/antalyaBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Antalya\n07"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/artvinBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Artvin\n08"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/aydinBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Aydın\n09"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/balikesirBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Balıkesir\n10"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/bilecikBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Bilecik\n11"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/bingolBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Bingol\n12"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/bitlisBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Bitlis\n13"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/boluBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Bolu\n14"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/burdurBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Burdur\n15"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/bursaBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Bursa\n16"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/canakkaleBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Çanakkale\n17"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/cankiriBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Çankırı\n18"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/corumBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Çorum\n19"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/denizliBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Denizli\n20"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/diyarbakirBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Diyarbakır\n21"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/edirneBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Edirne\n22"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/elazigBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Elazığ\n23"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/erzincanBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Erzincan\n24"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/erzurumBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Erzurum\n25"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/eskisehirBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Eskişehir\n26"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/gaziantepBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Gaziantep\n27"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/giresunBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Giresun\n28"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/gumushaneBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Gümüşhane\n29"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/hakkariBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Hakkari\n30"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/hatayBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Hatay\n31"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/ispartaBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Hatay\n32"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/mersinBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Mersin\n33"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/istanbulBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="istanbul\n34"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/izmirBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="İzmir\n35"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/karsBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Kars\n36"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/kastamonuBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Kastamonu\n37"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/kayseriBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Kayseri\n38"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/kirklareliBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Kırklareli\n39"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/kirsehirBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Kırşehir\n40"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/kocaeliBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Kocaeli\n41"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/konyaBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Konya\n42"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/kutahyaBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Kütahya\n43"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/malatyaBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Malatya\n44"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/manisaBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Manisa\n45"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/marasBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="K.Maraş\n46"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/mardinBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Mardin\n47"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/muglaBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Muğla\n48"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/musBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Muş\n49"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/nevsehirBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Nevşehir\n50"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/nigdeBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Niğde\n51"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/orduBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Ordu\n52"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/rizeBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Rize\n53"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/sakaryaBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Sakarya\n54"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/samsunBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Samsun\n55"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/siirtBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Siirt\n56"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/sinopBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Sinop\n57"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/sivasBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Sivas\n58"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/tekirdagBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Tekirdağ\n59"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/tokatBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Tokat\n60"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/trabzonBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Trabzon\n61"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/tunceliBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Tunceli\n62"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/urfaBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Ş.urfa\n63"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/usakBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Uşak\n64"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/vanBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Van\n65"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/yozgatBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Yozgat\n66"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/zonguldakBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Zonguldak\n67"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/aksarayBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Aksaray\n68"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/bayburtBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Bayburt\n69"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/karamanBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Karaman\n70"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/kirikkaleBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Kırıkkale\n71"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/batmanBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Batman\n72"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/sirnakBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="şırnak\n73"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/bartinBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Bartın\n74"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/ardahanBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Ardahan\n75"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp">
+
+                    <Button
+                        android:id="@+id/igdirBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Iğdır\n76"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/yalovaBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Yalova\n77"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/karabukBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Karabük\n78"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+
+                    <Button
+                        android:id="@+id/kilisBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Kilis\n79"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/osmaniyeBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Osmaniye\n80"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/duzceBtn"
+                        android:layout_width="110dp"
+                        android:layout_height="60dp"
+                        android:background="@drawable/buton_selector"
+                        android:fontFamily="serif"
+                        android:text="Düzce\n81"
+                        android:textColor="#FFFFFF"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+
+                </TableRow>
+
+            </TableLayout>
+
+        </LinearLayout>
     </ScrollView>
-
-
-
 
 
 </android.support.constraint.ConstraintLayout>

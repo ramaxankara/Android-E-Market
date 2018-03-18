@@ -21,15 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        final Button ibrahimBtn;
-        ibrahimBtn = (Button) findViewById(R.id.ibrahimBtn);
-        ibrahimBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
-
-            }
-        });
 
         // butonlar için id dizisi olusturuldu.
 
@@ -69,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         int i;
         String temp = null;
 
-
         for ( i = 0; i < 81; i++){
 
             temp = sehirButonIsimleri[i];   // buton ismini sehirButonIsimleri dizisinden cekip kullanmak için gecici degisken
@@ -89,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(aramaSayfasıAc);
 
 
-
                 }
 
             });
@@ -97,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-
 
 
     static String gonder = null;
