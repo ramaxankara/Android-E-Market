@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    android:background="@color/sehirSecArkaPlan">
 
     <TableLayout
         android:layout_width="wrap_content"
@@ -10,7 +11,7 @@
         android:background="@color/sehirSecArkaPlan">
 
         <TableRow
-            android:layout_width="wrap_content"
+            android:layout_width="300dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
@@ -20,19 +21,19 @@
 
             <AutoCompleteTextView
                 android:id="@+id/aramaTxt"
-                android:layout_width="wrap_content"
+                android:layout_width="250dp"
                 android:fontFamily="monospace"
                 android:paddingLeft="10dp"
                 android:hint="Ürün Giriniz ..."
                 android:maxLength="18"
                 android:text=""
                 android:textColor="#545454"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/aramaBtn"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:layout_marginRight="10dp"
                 android:background="@android:drawable/ic_search_category_default" />
 
@@ -57,13 +58,24 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp">
 
-            <TextView
-                android:id="@+id/listeleTxt"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:width="300dp"
-                android:height="200dp"
-                android:text="TextView" />
+            <ListView
+                android:id="@+id/bulunanUrunlerLV"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_weight="1"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
+
+            <Button
+                android:id="@+id/buton1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="deneme" />
         </TableRow>
 
 
