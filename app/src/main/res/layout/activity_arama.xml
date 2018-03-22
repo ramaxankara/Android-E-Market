@@ -7,10 +7,10 @@
 
     <TableLayout
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="394dp"
+        tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="2dp"
-        tools:layout_editor_absoluteY="16dp"
-        tools:ignore="MissingConstraints">
+        tools:layout_editor_absoluteY="14dp">
 
         <TableRow
             android:layout_width="match_parent"
@@ -18,13 +18,13 @@
 
             <AutoCompleteTextView
                 android:id="@+id/txt"
-                android:layout_centerInParent="true"
-                android:textSize="20sp"
-                android:textColor="#010101"
-                android:popupBackground="#FF1FE910"
-                android:hint="Aramak istediğiniz ürünü yazınız"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:hint="Aramak istediğiniz ürünü yazınız"
+                android:popupBackground="#FF1FE910"
+                android:textColor="#010101"
+                android:textSize="20sp" />
 
 
         </TableRow>
@@ -83,11 +83,4 @@
 
     </TableLayout>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="96dp"
-        tools:layout_editor_absoluteY="445dp" />
 </android.support.constraint.ConstraintLayout>
