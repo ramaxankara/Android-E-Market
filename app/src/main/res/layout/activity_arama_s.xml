@@ -71,11 +71,6 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp">
 
-            <Button
-                android:id="@+id/buton1"
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:text="deneme" />
         </TableRow>
 
 
