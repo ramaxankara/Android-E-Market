@@ -89,7 +89,7 @@ public class DatabaseEklemeIslemleri {
             for(int j=1;j<5;j++){
                 for(int t=1;t<4;t++){
                     String  sehir=sehirButonIsimleri[i].substring(0,sehirButonIsimleri[i].length()-3);
-                    UrunEkle(sehir,""+j,""+t,"centro"+t+"-",""+(10-j-t),"457"+i+""+j+""+t,""+j);
+                    UrunEkle(sehir,""+j,""+t,"centro"+t+"-",""+(10-j-t),"5449000016669",""+j);
 
                 }
             }
@@ -99,7 +99,7 @@ public class DatabaseEklemeIslemleri {
 
         //urunler taablosuna urun ekleme
         for(int i=0;i<5;i++){
-          UrunTablosunaUrunEkleme(""+i,"centro"+i+"-","145248","45","5");
+          UrunTablosunaUrunEkleme(""+i,"centro"+i+"-","5449000016669","45","5");
         }
     }
 }

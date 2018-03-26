@@ -22,17 +22,16 @@ import java.util.List;
 public class Arama_Activity extends AppCompatActivity {
 
     //--- component tanımlama
-    TextView listele;
-
     Button barkodBtn,aramaBtn;
     ListView bulunanUrunlerLV;
-    String sehirAdi="",arananUrun;
+    String sehirAdi="",arananUrun,barkodNo="";
     Boolean urunVarmı;
-    ArrayList<String> gelenUrunler = new ArrayList<String>();
+    ArrayList<String> gelenSubeler= new ArrayList<String>();
     ArrayList<String> listelenecekUrunler = new ArrayList<String>();
-
     DatabaseReference okunanVeriler= FirebaseDatabase.getInstance().getReference();
-    ArrayAdapter adapter,veri;
+    ArrayAdapter sube,veri;
+
+
     //---
 
 
@@ -48,11 +47,12 @@ public class Arama_Activity extends AppCompatActivity {
             public void onDataChange(DataSnapshot dataSnapshot)
             {
                 int urunsayisi= (int) dataSnapshot.child("urunler").getChildrenCount();
-                for(int i=1;i<urunsayisi;i++)
+                for(int i=0;i<urunsayisi;i++)
                 {
                     UrunOzelikleri urun=new UrunOzelikleri();
                     urun=dataSnapshot.child("urunler").child(""+i).getValue(UrunOzelikleri.class);
                     listelenecekUrunler.add(urun.urunAdi);
+
                 }
 
             }
@@ -70,13 +70,17 @@ public class Arama_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arama_s);
         MainActivity mainNesne = new MainActivity();
+        final barcodeShow barkod=new barcodeShow();
+        barkodNo=barkod.getBarkod();
         sehirAdi=mainNesne.getIsim().substring(0,mainNesne.getIsim().length()-3);
+
+
+
+
 
         //--- nesneyi xml ile bağlama
 
-        for(int i=0;i<100;i++){
-            listelenecekUrunler.add("centro"+i+"-");
-        }
+
       final   AutoCompleteTextView aramaTxt =findViewById(R.id.aramaTxt);
         barkodBtn = (Button) findViewById(R.id.barkodBtn);
         aramaBtn=findViewById(R.id.aramaBtn);
@@ -85,18 +89,29 @@ public class Arama_Activity extends AppCompatActivity {
 
         //--- List view işleri
 
+
        veri = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_dropdown_item, listelenecekUrunler);
         aramaTxt.setAdapter(veri);
 
-
+           // aramaTxt.setText(barkodNo);
 
         //---
+        sube = new ArrayAdapter<String>(this,
+                R.layout.activity_listview, gelenSubeler);
 
         aramaBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(aramaTxt.getText().length()==0){
+                    aramaTxt.setText(barkodNo);
+                }
+
+
                 arananUrun=aramaTxt.getText().toString();
-                //girilenUrun.getText().toString();
+
+                gelenSubeler.clear();
+
+
                 ValueEventListener dinle=new ValueEventListener()
                 {
 
@@ -105,37 +120,52 @@ public class Arama_Activity extends AppCompatActivity {
                     {
 
 
-                        for (DataSnapshot postSnapshot: dataSnapshot.getChildren())
-                        {
 
                             int subeSayisi= (int) dataSnapshot.child("iller").child(sehirAdi).getChildrenCount();
                             for(int i=1;i<subeSayisi;i++)
                             {
                                 int urunSayisi=(int)dataSnapshot.child("iller").child(sehirAdi).child(""+i).getChildrenCount();
-                                for (int k=1;k<urunSayisi-3;k++)
+                                for (int k=1;k<urunSayisi-1;k++)
                                 {
                                     UrunOzelikleri urun=new UrunOzelikleri();
                                     urun=dataSnapshot.child("iller").child(sehirAdi).child(""+i).child(""+k).getValue(UrunOzelikleri.class);
-                                    if(urun.urunAdi.equals(arananUrun)){
-                                        urunVarmı=true;
-                                        SubeOzelikleri sube=new SubeOzelikleri();
-                                        sube=dataSnapshot.child("iller").child(sehirAdi).child(""+i).getValue(SubeOzelikleri.class);
-                                        gelenUrunler.add(sube.subeAdi+" Şubesinde "+urun.urunMiktari+" tane "+urun.urunAdi+" bulunmaktadır");
+                                    if(arananUrun.charAt(0)<60)
+                                    {
+
+                                        if(urun.urunBarkodNo.equals(arananUrun)){
+                                            urunVarmı=true;
+                                            SubeOzelikleri sube=new SubeOzelikleri();
+                                            sube=dataSnapshot.child("iller").child(sehirAdi).child(""+i).getValue(SubeOzelikleri.class);
+                                            gelenSubeler.add(sube.subeAdi+" Şubesinde "+urun.urunMiktari+" tane "+urun.urunAdi+" bulunmaktadır");
+                                        }
                                     }
+                                    else
+                                    {
+                                        if(urun.urunAdi.equals(arananUrun)){
+                                            urunVarmı=true;
+                                            SubeOzelikleri sube=new SubeOzelikleri();
+                                            sube=dataSnapshot.child("iller").child(sehirAdi).child(""+i).getValue(SubeOzelikleri.class);
+                                            gelenSubeler.add(sube.subeAdi+" Şubesinde "+urun.urunMiktari+" tane "+urun.urunAdi+" bulunmaktadır");
+                                        }
+                                    }
+
 
                                 }
 
                             }
-                            break;
-                        }
-                        if(urunVarmı){
+
+
+                        if(urunVarmı)
+                        {
                             bulunanUrunlerLV = (ListView) findViewById(R.id.bulunanUrunlerLV);
-                            bulunanUrunlerLV.setAdapter(adapter);
-                            urunVarmı=false;
+                            bulunanUrunlerLV.setAdapter(sube);
+
+
+
 
                         }
                         else {
-                            gelenUrunler.add("urunbulunamadı");
+                            aramaTxt.setText("ürün bulunamadı");
 
                         }
 
@@ -152,8 +182,6 @@ public class Arama_Activity extends AppCompatActivity {
             }
         });
 
-         adapter = new ArrayAdapter<String>(this,
-                R.layout.activity_listview, gelenUrunler);
 
 
         //Barcode okuma Sayfası Açıldı(Ramazan)

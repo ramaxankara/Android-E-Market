@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1020181399768-9qutcsjgk73iblrlp0bm30p7dvfsaobs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mustafa.a_market",
+            "certificate_hash": "995f7581a2a74b1658a1e1dda83a863471a975ea"
+          }
+        },
+        {
           "client_id": "1020181399768-m8ec3oao4n23vdtcp7nsep77lrs7h4s2.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {

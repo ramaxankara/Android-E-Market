@@ -156,6 +156,7 @@ TextView listele;
         builder.setNeutralButton("Visit ", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+
                 Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse(scanResult));
                 startActivity(intent);
             }
