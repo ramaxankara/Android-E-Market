@@ -179,7 +179,7 @@ TextView listele;
         return okunanBarkod;
     }
 
- //Okunan Barkod Return Edildi
+ //Okunan Barkod Re
 }
 
 
