@@ -150,7 +150,7 @@ TextView listele;
                 setBarkod(scanResult);
 
                 Intent aramaSayfasiAc = new Intent(barcodeShow.this,Arama_Activity.class);
-                startActivity(aramaSayfasiAc);
+                startActivity(aramaSayfasiAc);//Arama Sayfası Açıldı
             }
         });
         builder.setNeutralButton("Visit ", new DialogInterface.OnClickListener() {
@@ -179,7 +179,7 @@ TextView listele;
         return okunanBarkod;
     }
 
-
+ //Okunan Barkod Return Edildi
 }
 
 
