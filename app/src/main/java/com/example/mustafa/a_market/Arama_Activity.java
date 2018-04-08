@@ -20,7 +20,10 @@ import java.util.List;
  */
 
 public class Arama_Activity extends AppCompatActivity {
-       DatabaseAramaIslemleri getir=new DatabaseAramaIslemleri();
+
+    DatabaseAramaIslemleri arama=new DatabaseAramaIslemleri(); //Arama sınıfı nesnesi
+    DatabaseEklemeIslemleri ekle=new DatabaseEklemeIslemleri();//Ekleme sınıfı nesnesi
+
     //--- component tanımlama
     Button barkodBtn,aramaBtn;
     ListView bulunanUrunlerLV;
@@ -39,49 +42,22 @@ public class Arama_Activity extends AppCompatActivity {
 
     public Arama_Activity()
     {
-
-        ValueEventListener dinle=new ValueEventListener()
-        {
-
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot)
-            {
-                int urunsayisi= (int) dataSnapshot.child("urunler").getChildrenCount();
-                for(int i=0;i<urunsayisi;i++)
-                {
-                    UrunOzelikleri urun=new UrunOzelikleri();
-                    urun=dataSnapshot.child("urunler").child(""+i).getValue(UrunOzelikleri.class);
-                    listelenecekUrunler.add(urun.urunAdi);
-
-                }
-
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-            }
-        };
-        okunanVeriler.addValueEventListener(dinle);
-
+       listelenecekUrunler=arama.ListelenecekUrunler();//listelenecek urunleri diziye alma
     }
-
 
 
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_arama_s);
-        MainActivity mainNesne = new MainActivity();
-        final barcodeShow barkod=new barcodeShow();
+
+        MainActivity mainNesne = new MainActivity(); //main sınıfının nesnesi
+        barcodeShow barkod=new barcodeShow(); //barkod  sınıfının nesnesi
 
         sehirAdi=mainNesne.getIsim().substring(0,mainNesne.getIsim().length()-3);
-
-
-
-
 
         //--- nesneyi xml ile bağlama
 
 
-      final   AutoCompleteTextView aramaTxt =findViewById(R.id.aramaTxt);
         barkodBtn = (Button) findViewById(R.id.barkodBtn);
         aramaBtn=findViewById(R.id.aramaBtn);
 
@@ -89,7 +65,7 @@ public class Arama_Activity extends AppCompatActivity {
 
         //--- List view işleri
 
-
+        final   AutoCompleteTextView aramaTxt =findViewById(R.id.aramaTxt);
        veri = new ArrayAdapter<String>(getApplicationContext(),android.R.layout.simple_spinner_dropdown_item, listelenecekUrunler);
         aramaTxt.setAdapter(veri);
 
@@ -97,13 +73,15 @@ public class Arama_Activity extends AppCompatActivity {
 
         //---
               barkodNo=barkod.getBarkod();
+                    gelenSubeler.clear();
+                    gelenSubeler = arama.BarkodIleArama(sehirAdi, barkodNo);
 
-            gelenSubeler = getir.BarkodIleArama(sehirAdi, barkodNo);
+
+                        EkranaYazmakIcinHazırla();
+                        bulunanUrunlerLV = (ListView) findViewById(R.id.bulunanUrunlerLV);
+                        bulunanUrunlerLV.setAdapter(sube);
 
 
-        EkranaYazmakIcinHazırla();
-        bulunanUrunlerLV = (ListView) findViewById(R.id.bulunanUrunlerLV);
-        bulunanUrunlerLV.setAdapter(sube);
 
 
 
@@ -111,9 +89,8 @@ public class Arama_Activity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 arananUrun = aramaTxt.getText().toString();
-                gelenSubeler = getir.isimIleArama(sehirAdi, arananUrun);
-
-
+                gelenSubeler.clear();
+                gelenSubeler = arama.isimIleArama(sehirAdi, arananUrun);
                 EkranaYazmakIcinHazırla();
                 bulunanUrunlerLV = (ListView) findViewById(R.id.bulunanUrunlerLV);
                 bulunanUrunlerLV.setAdapter(sube);
