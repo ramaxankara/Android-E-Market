@@ -25,7 +25,8 @@ public class Arama_Activity extends AppCompatActivity {
     DatabaseEklemeIslemleri ekle=new DatabaseEklemeIslemleri();//Ekleme sınıfı nesnesi
 
     //--- component tanımlama
-    Button barkodBtn,aramaBtn;
+    Button aramaBtn;
+    ImageButton barkodBtn;
     ListView bulunanUrunlerLV;
     String sehirAdi="",arananUrun,barkodNo="";
     Boolean urunVarmı;
@@ -58,7 +59,7 @@ public class Arama_Activity extends AppCompatActivity {
         //--- nesneyi xml ile bağlama
 
 
-        barkodBtn = (Button) findViewById(R.id.barkodBtn);
+        barkodBtn = (ImageButton) findViewById(R.id.barkodBtn);
         aramaBtn=findViewById(R.id.aramaBtn);
 
         //----

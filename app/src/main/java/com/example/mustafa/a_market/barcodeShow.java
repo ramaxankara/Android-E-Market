@@ -30,7 +30,7 @@ public class barcodeShow  extends AppCompatActivity implements ZXingScannerView.
 
     private static final int REQUEST_CAMERA =1;
     private ZXingScannerView scannerView;
-TextView listele;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,6 @@ TextView listele;
 
         scannerView=new ZXingScannerView(this);
         setContentView(scannerView);
-     listele=findViewById(R.id.listele);
 
 
         if(Build.VERSION.SDK_INT >=Build.VERSION_CODES.ICE_CREAM_SANDWICH_MR1);//Kamera izni İçin en Düşük API

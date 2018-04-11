@@ -1,79 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:background="@color/sehirSecArkaPlan">
 
-    <TableLayout
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="@color/sehirSecArkaPlan">
+        android:layout_height="match_parent">
 
         <TableRow
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
+            android:layout_width="500dp"
+            android:layout_height="60dp"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:layout_marginTop="10dp"
             android:background="@drawable/arama_text_tasarim"
             android:gravity="center_vertical">
 
-            <AutoCompleteTextView
-                android:id="@+id/aramaTxt"
-                android:layout_width="250dp"
-                android:fontFamily="monospace"
-                android:paddingLeft="10dp"
-                android:hint="Ürün Giriniz ..."
-                android:maxLength="18"
-                android:text=""
-                android:textColor="#545454"
-                android:textSize="18sp" />
 
             <Button
                 android:id="@+id/aramaBtn"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
-                android:layout_marginRight="10dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
                 android:background="@android:drawable/ic_search_category_default" />
 
-        </TableRow>
+            <AutoCompleteTextView
+                android:id="@+id/aramaTxt"
+                android:layout_width="220dp"
+                android:maxWidth="220dp"
+                android:fontFamily="monospace"
+                android:hint="Ürün Giriniz ..."
+                android:maxLength="18"
+                android:paddingLeft="10dp"
+                android:text=""
+                android:textColor="#545454"
+                android:textSize="18sp" />
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp">
-
-            <Button
+            <ImageButton
                 android:id="@+id/barkodBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Barkod Buton" />
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="10dp"
+                app:srcCompat="@drawable/barkod" />
+
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="260dp"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="80dp"
             android:layout_marginRight="10dp">
 
             <ListView
                 android:id="@+id/bulunanUrunlerLV"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
+            android:layout_marginTop="350dp"
             android:layout_marginRight="10dp">
 
+            <Button
+                android:id="@+id/subelerBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Şubeler" />
+
+            <Button
+                android:id="@+id/iletisimBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bize Ulaşın" />
         </TableRow>
 
-
-    </TableLayout>
+    </RelativeLayout>
 
 </LinearLayout>
