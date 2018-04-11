@@ -143,27 +143,13 @@ TextView listele;
         final String scanResult=result.getText();
         AlertDialog.Builder builder=new AlertDialog.Builder(this);
         builder.setTitle("Scan Result");
-        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                //scannerView.resumeCameraPreview(barcodeShow.this);
-                setBarkod(scanResult);
+        setBarkod(scanResult);
 
-                Intent aramaSayfasiAc = new Intent(barcodeShow.this,Arama_Activity.class);
-                startActivity(aramaSayfasiAc);//Arama Sayfası Açıldı
-            }
-        });
-        builder.setNeutralButton("Visit ", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
+        Intent aramaSayfasiAc = new Intent(barcodeShow.this,Arama_Activity.class);
+        startActivity(aramaSayfasiAc);//Arama Sayfası Açıldı
 
-                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse(scanResult));
-                startActivity(intent);
-            }
-        });
-        builder.setMessage(scanResult );
-        AlertDialog alert=builder.create();
-        alert.show();
+
+
 
     }
 
