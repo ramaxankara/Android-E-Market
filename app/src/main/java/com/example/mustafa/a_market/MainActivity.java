@@ -76,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
                     setIsim(finalTest);
 
 
-                    Intent aramaSayfasıAc = new Intent(MainActivity.this, Arama_Activity.class);
-                    startActivity(aramaSayfasıAc);
+                    Intent yonlendirmeSayfasiAc = new Intent(MainActivity.this, Yonlendirme_Activity.class);
+                    startActivity(yonlendirmeSayfasiAc);
 
 
                 }

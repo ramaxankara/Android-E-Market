@@ -2,13 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mustafa.a_market">
 
-
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera2"></uses-feature>
-    <uses-feature android:name="android.hardware.camera2.autofocus"></uses-feature>
 
+    <uses-feature android:name="android.hardware.camera2" />
+    <uses-feature android:name="android.hardware.camera2.autofocus" />
     //Kamerayı Açmak İçin Gerekli İzinler(Ramazan Kara)
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,8 +21,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Arama_Activity"></activity>
-        <activity android:name=".barcodeShow" /> // Yeni Activity için İzin(Ramazan Kara)
+        <activity android:name=".Arama_Activity" />
+        <activity android:name=".barcodeShow" />
+        // Yeni Activity için İzin(Ramazan Kara)
+        <activity android:name=".Yonlendirme_Activity"></activity>
     </application>
 
 </manifest>

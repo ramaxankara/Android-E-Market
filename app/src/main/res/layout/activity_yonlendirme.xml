@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:background="@color/sehirSecArkaPlan">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_vertical">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/arama_text_tasarim">
+
+
+            <ImageButton
+                android:id="@+id/urunBulBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/urun_arama"
+                android:background="@color/aramaTextColor"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"/>
+
+            <EditText
+                android:id="@+id/editText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ürün Arama"
+                android:fontFamily="serif-monospace"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_marginRight="20dp"
+                android:enabled="false"
+                android:textColor="#000"/>
+
+
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="120dp"
+            android:background="@drawable/arama_text_tasarim"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/subelerBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/subeler"
+                android:background="@color/aramaTextColor"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp"/>
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Şubelerimiz"
+                android:fontFamily="serif-monospace"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_marginRight="20dp"
+                android:enabled="false"
+                android:textColor="#000"/>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="240dp"
+            android:background="@drawable/arama_text_tasarim"
+            android:orientation="horizontal">
+
+
+            <ImageButton
+                android:id="@+id/iletisimBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/bize_ulas"
+                android:background="@color/aramaTextColor"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="3dp" />
+
+            <EditText
+                android:id="@+id/editText2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bize Ulaşın"
+                android:fontFamily="serif-monospace"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:layout_marginRight="20dp"
+                android:enabled="false"
+                android:textColor="#000" />
+
+        </TableRow>
+
+
+    </RelativeLayout>
+</LinearLayout>
