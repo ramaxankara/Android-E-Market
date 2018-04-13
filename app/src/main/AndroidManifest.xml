@@ -2,14 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mustafa.a_market">
 
+
+    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="27" />
+
     <uses-permission android:name="android.permission.CAMERA" />
 
     <uses-feature android:name="android.hardware.camera2" />
     <uses-feature android:name="android.hardware.camera2.autofocus" />
     //Kamerayı Açmak İçin Gerekli İzinler(Ramazan Kara)
-
     <uses-permission android:name="android.permission.INTERNET" />
     //Internet Acma izni alındı
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
 
     <application
         android:allowBackup="true"
@@ -29,7 +34,8 @@
         <activity android:name=".barcodeShow" />
         // Yeni Activity için İzin(Ramazan Kara)
         <activity android:name=".Yonlendirme_Activity" />
-        <activity android:name=".webViewActivity"></activity>
+        <activity android:name=".webViewActivity" />
+        <activity android:name=".callActivity"></activity>
     </application>
 
 </manifest>

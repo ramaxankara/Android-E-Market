@@ -1,6 +1,7 @@
 package com.example.mustafa.a_market;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -39,8 +40,10 @@ public class Yonlendirme_Activity extends AppCompatActivity {
         iletisimBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               // Intent aramaAc = new Intent(new Intent(Yonlendirme_Activity.this,Arama_Activity.class));
-                //startActivity(aramaAc);
+
+
+             Intent telAc = new Intent(new Intent(Yonlendirme_Activity.this,callActivity.class));
+              startActivity(telAc);
             }
         });
 
