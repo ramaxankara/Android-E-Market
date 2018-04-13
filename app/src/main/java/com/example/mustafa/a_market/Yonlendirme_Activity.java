@@ -31,8 +31,8 @@ public class Yonlendirme_Activity extends AppCompatActivity {
         subelerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent aramaAc = new Intent(new Intent(Yonlendirme_Activity.this,Arama_Activity.class));
-               // startActivity(aramaAc);
+                Intent magazaAc = new Intent(new Intent(Yonlendirme_Activity.this,webViewActivity.class));
+                startActivity(magazaAc);
             }
         });
 
